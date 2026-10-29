@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | My Website</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="logo">MyWebsite</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about" class="active">About</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="hero">
+        <h1 id="title">About Us</h1>
+        <p id="message">Learn more about our website.</p>
+        <a href="/" class="primary-btn">Back to Home</a>
+      </section>
+
+      <section class="content">
+        <h2>Our Mission</h2>
+        <p>
+          Our goal is to build accessible, reliable and user-friendly web
+          experiences using modern web technologies.
+        </p>
+        <br />
+        <h2>Our Technology</h2>
+        <p>
+          We use HTML, CSS, JavaScript, Node.js and Express to create and serve
+          web pages.
+        </p>
+      </section>
+    </main>
+
+    <footer>© 2026 MyWebsite. All rights reserved.</footer>
+
+    <script>
+      async function loadAbout() {
+        try {
+          const response = await fetch("/api/about");
+          if (!response.ok) throw new Error("Failed to load about data");
+
+          const data = await response.json();
+          document.getElementById("title").textContent = data.title;
+          document.getElementById("message").textContent = data.message;
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      loadAbout();
+    </script>
+  </body>
+</html>

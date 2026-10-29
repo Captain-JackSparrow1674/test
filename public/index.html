@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | My Website</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="logo">MyWebsite</a>
+      <div class="nav-links">
+        <a href="/" class="active">Home</a>
+        <a href="/about">About</a>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="hero">
+        <h1 id="title">Welcome Home</h1>
+        <p id="message">Discover our website and explore what we offer.</p>
+        <a href="/about" class="primary-btn">Explore About Us</a>
+      </section>
+
+      <section class="content">
+        <h2>What We Do</h2>
+        <p>
+          We create simple, modern and useful digital experiences with a focus
+          on quality and usability.
+        </p>
+      </section>
+    </main>
+
+    <footer>© 2026 MyWebsite. All rights reserved.</footer>
+
+    <script>
+      async function loadHome() {
+        try {
+          const response = await fetch("/api/home");
+          if (!response.ok) throw new Error("Failed to load home data");
+
+          const data = await response.json();
+          document.getElementById("title").textContent = data.title;
+          document.getElementById("message").textContent = data.message;
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      loadHome();
+    </script>
+  </body>
+</html>
