@@ -3,35 +3,90 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Thoughtful digital experiences, made simple."
+    />
     <title>Home | My Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <nav>
-      <a href="/" class="logo">MyWebsite</a>
+    <nav class="site-nav">
+      <a href="/" class="logo"><span class="logo-mark">M</span> MyWebsite</a>
       <div class="nav-links">
-        <a href="/" class="active">Home</a>
+        <a href="/" class="active" aria-current="page">Home</a>
         <a href="/about">About</a>
       </div>
     </nav>
 
     <main class="container">
       <section class="hero">
-        <h1 id="title">Welcome Home</h1>
-        <p id="message">Discover our website and explore what we offer.</p>
-        <a href="/about" class="primary-btn">Explore About Us</a>
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> A little more thoughtful</p>
+          <h1 id="title">Welcome Home</h1>
+          <p id="message">
+            Discover our website and explore what we offer.
+          </p>
+          <div class="hero-actions">
+            <a href="/about" class="primary-btn">
+              Get to know us <span aria-hidden="true">↗</span>
+            </a>
+            <a href="#what-we-do" class="text-link">Explore what we do</a>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="art-center">
+            <span class="art-sparkle">✳</span>
+            <span class="art-caption">Made with intention</span>
+          </div>
+          <span class="art-dot dot-one"></span>
+          <span class="art-dot dot-two"></span>
+        </div>
       </section>
 
-      <section class="content">
-        <h2>What We Do</h2>
-        <p>
-          We create simple, modern and useful digital experiences with a focus
-          on quality and usability.
-        </p>
+      <section class="content" id="what-we-do">
+        <div class="section-heading">
+          <p class="eyebrow">Our approach</p>
+          <h2>Good work starts with the details.</h2>
+          <p>
+            We create useful digital experiences that feel simple, clear, and
+            a little more human.
+          </p>
+        </div>
+        <div class="value-grid">
+          <article class="value-card">
+            <span class="value-number">01</span>
+            <h3>Clear by design</h3>
+            <p>Thoughtful choices make every interaction easy to understand.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-number">02</span>
+            <h3>Made for people</h3>
+            <p>Accessible, welcoming experiences come first, on every screen.</p>
+          </article>
+          <article class="value-card">
+            <span class="value-number">03</span>
+            <h3>Built with care</h3>
+            <p>Reliable technology and attention to detail make a difference.</p>
+          </article>
+        </div>
       </section>
     </main>
 
-    <footer>© 2026 MyWebsite. All rights reserved.</footer>
+    <footer>
+      <a href="/" class="footer-brand">MyWebsite</a>
+      <span>© 2026 MyWebsite. All rights reserved.</span>
+      <a href="/about">A little about us <span aria-hidden="true">↗</span></a>
+    </footer>
 
     <script>
       async function loadHome() {
